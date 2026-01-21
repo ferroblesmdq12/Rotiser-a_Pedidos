@@ -1,9 +1,10 @@
+# src/data/pedidos_repo.py
 from typing import Dict, Tuple
 
 import pandas as pd
 import gspread
 
-from src.data.sheets_client import open_worksheet, get_gspread_client
+from src.data.sheets_client import open_worksheet
 from src.data.schemas import COL_ESTADO, COL_SHEET_ROW, ESTADOS_VALIDOS
 
 

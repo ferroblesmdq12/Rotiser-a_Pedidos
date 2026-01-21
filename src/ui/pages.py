@@ -1,3 +1,4 @@
+# src/ui/pages.py
 import streamlit as st
 import pandas as pd
 

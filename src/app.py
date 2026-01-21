@@ -1,3 +1,5 @@
+# src/app.py
+
 import streamlit as st
 
 from src.core.config import load_settings

@@ -1,3 +1,4 @@
+# src/ui/components.py
 from typing import Dict, Tuple
 
 import pandas as pd

@@ -1,3 +1,4 @@
+# src/core/logging.py
 import logging
 
 def get_logger(name: str = "rotiseria") -> logging.Logger:

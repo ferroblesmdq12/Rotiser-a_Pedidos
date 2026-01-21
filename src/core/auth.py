@@ -1,3 +1,5 @@
+# src/core/auth.py
+
 import hashlib
 from dataclasses import dataclass
 from typing import Optional, Dict
