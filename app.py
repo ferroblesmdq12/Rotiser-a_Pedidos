@@ -6,9 +6,8 @@ from src.core.config import load_settings
 from src.core.auth import authenticate, set_user_session, get_user_session, logout
 from src.ui.styles import apply_global_styles
 from src.ui.pages import pedidos_page
-from src.data.sheets_client import debug_sa_email
 st.sidebar.caption(f"Service Account: {debug_sa_email()}")
-st.sidebar.caption(f"SA: {st.secrets['gcp_service_account']['client_email']}")
+
 
 
 
