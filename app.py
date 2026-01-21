@@ -30,6 +30,9 @@ def login_screen(settings):
         else:
             st.error("Usuario o contraseña incorrectos.")
 
+st.sidebar.caption(f"SA: {st.secrets['gcp_service_account'].get('client_email', '')}")
+
+
 
 def main():
     st.set_page_config(page_title="Rotisería - Pedidos", layout="wide")
