@@ -1,3 +1,4 @@
+
 # src/data/sheets_client.py
 from functools import lru_cache
 from typing import List
@@ -10,7 +11,12 @@ from google.oauth2.service_account import Credentials
 @lru_cache(maxsize=1)
 def get_gspread_client() -> gspread.Client:
     sa_info = dict(st.secrets["gcp_service_account"])
-    scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+
+    scopes = [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive",  # <-- agregado (clave)
+    ]
+
     creds = Credentials.from_service_account_info(sa_info, scopes=scopes)
     return gspread.authorize(creds)
 
@@ -24,8 +30,3 @@ def open_worksheet(spreadsheet_id: str, worksheet_name: str) -> gspread.Workshee
 def read_all_values(spreadsheet_id: str, worksheet_name: str) -> List[List[str]]:
     ws = open_worksheet(spreadsheet_id, worksheet_name)
     return ws.get_all_values()
-
-
-def debug_sa_email() -> str:
-    sa_info = dict(st.secrets["gcp_service_account"])
-    return str(sa_info.get("client_email", ""))
